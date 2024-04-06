@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", function() {
         let questionNo = currentQuestionIndex + 1;
         questionElement.innerHTML = questionNo + ". " + currentQuestion.question;
 
+        document.getElementById("answers").innerHTML = "";
 
         currentQuestion.answers.forEach(answer => {
             let button = document.createElement("button");
@@ -39,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 { text: "Hippo", correct: false},
                 { text: "Elephant", correct: true},
                 { text: "Rhino", correct: false},
-                { text: "Panther", correct: false},
+                { text: "Blue Whale", correct: false},
             ]
         },
         {
