@@ -14,6 +14,15 @@ document.addEventListener("DOMContentLoaded", function() {
         let currentQuestion = questions[currentQuestionIndex];
         let questionNo = currentQuestionIndex + 1;
         questionElement.innerHTML = questionNo + ". " + currentQuestion.question;
+
+
+        currentQuestion.answers.forEach(answer => {
+            let button = document.createElement("button");
+            button.innerHTML = answer.text;
+            button.classList.add("btn");
+            document.getElementById("answers").appendChild(button);
+            
+        });
     }
     function incrementScore() {
 
@@ -26,6 +35,12 @@ document.addEventListener("DOMContentLoaded", function() {
     const questions = [
         {
             question: "What is the largest land animal in the world?",
+            answers: [
+                { text: "Hippo", correct: false},
+                { text: "Elephant", correct: true},
+                { text: "Rhino", correct: false},
+                { text: "Panther", correct: false},
+            ]
         },
         {
             question: "What is the capital of England",
@@ -83,7 +98,7 @@ document.addEventListener("DOMContentLoaded", function() {
         },
         {
             question: "What is the largest planet in the solar system?",
-            answers: [,
+            answers: [
                 { text: "Saturn", correct: false},
                 { text: "Jupiter", correct: true},
                 { text: "Uranus", correct: false},
