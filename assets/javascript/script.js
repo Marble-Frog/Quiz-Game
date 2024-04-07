@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const questionElement = document.getElementById("question")
     let currentQuestionIndex = 0;
     let gameScore = 0;
+    let attemptsScore = 0;
     let previousSelectedButton = null;
 
     function runGame() {
@@ -43,7 +44,6 @@ document.addEventListener("DOMContentLoaded", function() {
             } else {
                 incrementAttempts();
             }
-            
             showQuestion();
         });
     }
@@ -69,7 +69,8 @@ document.addEventListener("DOMContentLoaded", function() {
         currentQuestionIndex += 1;
     }
     function incrementAttempts() {
-
+        attemptsScore ++;
+        document.getElementById("attempts").innerText = attemptsScore;
     }
 
     const questions = [
