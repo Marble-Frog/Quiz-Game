@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const questionElement = document.getElementById("question")
     let currentQuestionIndex = 0;
     let gameScore = 0;
+    let previousSelectedButton = null;
 
     function runGame() {
         currentQuestionIndex = 0;
@@ -35,7 +36,12 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     function selectedAnswer(answer, event) {
         let selectedButton = event.target;
+
+        if (previousSelectedButton) {
+            previousSelectedButton.style.border = ""
+        }
         selectedButton.style.border = "solid 3px orange";
+        previousSelectedButton = selectedButton;
         currentSelectedAnswer = answer;
     }
     function incrementAttempts() {
