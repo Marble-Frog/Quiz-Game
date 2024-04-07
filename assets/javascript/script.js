@@ -30,15 +30,20 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
     function showNextQuestion() {
+        console.log("Showing next question");
         nextButton.addEventListener("click", function () {
+            console.log("Next button clicked");
             let selectedAnswer = currentSelectedAnswer;
+            console.log("Selected answer:", selectedAnswer);
             let isCorrect = checkAnswer(selectedAnswer);
+            console.log("Is answer correct?", isCorrect);
             if (isCorrect) {
                 incrementScore();
+                
             } else {
                 incrementAttempts();
             }
-            currentQuestionIndex += 1;
+            
             showQuestion();
         });
     }
@@ -56,11 +61,12 @@ document.addEventListener("DOMContentLoaded", function() {
     function checkAnswer (selectedAnswer){
         let currentQuestion = questions[currentQuestionIndex]
         let correctAnswer = currentQuestion.answers.find(answer => answer.correct)
-        return selectedAnswer === correctAnswer.text && correctAnswer.correct;
+        return selectedAnswer === correctAnswer.correct;
     }
     function incrementScore() {
         gameScore++;
         document.getElementById("correctAnswers").innerText = gameScore;
+        currentQuestionIndex += 1;
     }
     function incrementAttempts() {
 
@@ -89,16 +95,16 @@ document.addEventListener("DOMContentLoaded", function() {
             question: "What is Batman's real name",
             answers: [
                 { text: "Wayne Bruce", correct: false},
-                { text: "Wruce Bayne", correct: true},
-                { text: "Bruce Wayne", correct: false},
+                { text: "Wruce Bayne", correct: false},
+                { text: "Bruce Wayne", correct: true},
                 { text: "Batman", correct: false},
             ]
         },
         {
             question: "How many continents are there and what are they called",
             answers: [
-                { text: "7", correct: false},
-                { text: "8", correct: true},
+                { text: "7", correct: true},
+                { text: "8", correct: false},
                 { text: "6", correct: false},
                 { text: "9", correct: false},
             ]
