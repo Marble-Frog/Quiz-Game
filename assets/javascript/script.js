@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", function() {
         currentQuestionIndex = 0;
         nextButton.innerHTML = "Next";
         showQuestion();
+        showNextQuestion();
     }
     function showQuestion(){
         let currentQuestion = questions[currentQuestionIndex];
@@ -29,10 +30,17 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
     function showNextQuestion() {
-        next-btn.addEventListener("click", function () {
+        nextButton.addEventListener("click", function () {
+            let selectedAnswer = currentSelectedAnswer;
+            let isCorrect = checkAnswer(selectedAnswer);
+            if (isCorrect) {
+                incrementScore();
+            } else {
+                incrementAttempts();
+            }
             currentQuestionIndex += 1;
             showQuestion();
-        })
+        });
     }
     function selectedAnswer(answer, event) {
         let selectedButton = event.target;
@@ -43,6 +51,16 @@ document.addEventListener("DOMContentLoaded", function() {
         selectedButton.style.border = "solid 3px orange";
         previousSelectedButton = selectedButton;
         currentSelectedAnswer = answer;
+    }
+
+    function checkAnswer (selectedAnswer){
+        let currentQuestion = questions[currentQuestionIndex]
+        let correctAnswer = currentQuestion.answers.find(answer => answer.correct)
+        return selectedAnswer === correctAnswer.text && correctAnswer.correct;
+    }
+    function incrementScore() {
+        gameScore++;
+        document.getElementById("correctAnswers").innerText = gameScore;
     }
     function incrementAttempts() {
 
