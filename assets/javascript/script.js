@@ -2,11 +2,10 @@ document.addEventListener("DOMContentLoaded", function() {
     const nextButton = document.getElementById("next-btn");
     const questionElement = document.getElementById("question")
     let currentQuestionIndex = 0;
-    let score = 0;
+    let gameScore = 0;
 
     function runGame() {
         currentQuestionIndex = 0;
-        score = 0;
         nextButton.innerHTML = "Next";
         showQuestion();
     }
@@ -22,13 +21,23 @@ document.addEventListener("DOMContentLoaded", function() {
             button.innerHTML = answer.text;
             button.classList.add("btn");
             document.getElementById("answers").appendChild(button);
-            
+            button.addEventListener("click", function(event) {
+                selectedAnswer(answer.correct, event);
+                document.getElementById("next-btn").style.display = "block"
+            });
         });
     }
-    function incrementScore() {
-
+    function showNextQuestion() {
+        next-btn.addEventListener("click", function () {
+            currentQuestionIndex += 1;
+            showQuestion();
+        })
     }
-
+    function selectedAnswer(answer, event) {
+        let selectedButton = event.target;
+        selectedButton.style.border = "solid 3px orange";
+        currentSelectedAnswer = answer;
+    }
     function incrementAttempts() {
 
     }
