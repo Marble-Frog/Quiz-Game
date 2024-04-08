@@ -6,19 +6,25 @@ document.addEventListener("DOMContentLoaded", function () {
   let gameScore = 0;
   let attemptsScore = 0;
   let previousSelectedButton = null;
+  let timerInterval;
+  let elapsedTime = 0;
 
   function ready2play() {
     readyButton.addEventListener("click", function() {
         document.querySelector(".app").style.display="block";
+        document.getElementById("intro").style.display="none"
+        startTimer()
     });
-}
+};
+
 ready2play();
+
   function runGame() {
     currentQuestionIndex = 0;
     nextButton.innerHTML = "Next";
     showQuestion();
     showNextQuestion();
-  }
+  };
   function showQuestion() {
     let currentQuestion = questions[currentQuestionIndex];
     let questionNo = currentQuestionIndex + 1;
@@ -36,7 +42,7 @@ ready2play();
         document.getElementById("next-btn").style.display = "block";
       });
     });
-  }
+  };
   function showNextQuestion() {
     console.log("Showing next question");
     nextButton.addEventListener("click", function () {
@@ -52,7 +58,7 @@ ready2play();
       }
       showQuestion();
     });
-  }
+  };
   function selectedAnswer(answer, event) {
     let selectedButton = event.target;
 
@@ -62,7 +68,7 @@ ready2play();
     selectedButton.style.border = "solid 3px orange";
     previousSelectedButton = selectedButton;
     currentSelectedAnswer = answer;
-  }
+  };
 
   function checkAnswer(selectedAnswer) {
     let currentQuestion = questions[currentQuestionIndex];
@@ -70,17 +76,38 @@ ready2play();
       (answer) => answer.correct
     );
     return selectedAnswer === correctAnswer.correct;
-  }
+  };
   function incrementScore() {
     gameScore++;
     document.getElementById("correctAnswers").innerText = gameScore;
     currentQuestionIndex += 1;
-  }
+  };
   function incrementAttempts() {
     attemptsScore++;
     document.getElementById("attempts").innerText = attemptsScore;
-  }
+  };
 
+  function startTimer() {
+    timerInterval = setInterval(function () {
+      elapsedTime++;
+      document.getElementById("timer").innerText = formatTime(elapsedTime);
+    }, 1000);
+  };
+  
+  function pauseTimer() {
+    clearInterval(timerInterval);
+  };
+  function formatTime(seconds) {
+    let minutes = Math.floor(seconds / 60);
+    let remainingSeconds = seconds % 60;
+    return (
+      (minutes < 10 ? "0" : "") +
+      minutes + 
+      ":" +
+      (remainingSeconds < 10 ? "0" : "") +
+      remainingSeconds
+    ); 
+  }
   const questions = [
     {
       question: "What is the largest land animal in the world?",
