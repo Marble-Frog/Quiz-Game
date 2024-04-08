@@ -33,11 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function showNextQuestion() {
     console.log("Showing next question");
     nextButton.addEventListener("click", function () {
-      console.log("Next button clicked");
-      let selectedAnswer = currentSelectedAnswer;
-      console.log("Selected answer:", selectedAnswer);
       let isCorrect = checkAnswer(selectedAnswer);
-      console.log("Is answer correct?", isCorrect);
       if (isCorrect) {
         incrementScore();
       } else {
