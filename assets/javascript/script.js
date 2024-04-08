@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
+  let readyButton = document.getElementById("ready")
   const nextButton = document.getElementById("next-btn");
   const questionElement = document.getElementById("question");
   let currentQuestionIndex = 0;
@@ -6,6 +7,12 @@ document.addEventListener("DOMContentLoaded", function () {
   let attemptsScore = 0;
   let previousSelectedButton = null;
 
+  function ready2play() {
+    readyButton.addEventListener("click", function() {
+        document.querySelector(".app").style.display="block";
+    });
+}
+ready2play();
   function runGame() {
     currentQuestionIndex = 0;
     nextButton.innerHTML = "Next";
@@ -33,7 +40,11 @@ document.addEventListener("DOMContentLoaded", function () {
   function showNextQuestion() {
     console.log("Showing next question");
     nextButton.addEventListener("click", function () {
+      console.log("Next button clicked");
+      let selectedAnswer = currentSelectedAnswer;
+      console.log("Selected answer:", selectedAnswer);
       let isCorrect = checkAnswer(selectedAnswer);
+      console.log("Is answer correct?", isCorrect);
       if (isCorrect) {
         incrementScore();
       } else {
