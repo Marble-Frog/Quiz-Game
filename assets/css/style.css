@@ -24,6 +24,10 @@ body{
     padding:30px;
     display: none;
 }
+.app h2{
+    float:left;
+    padding-right:10px;
+}
 .app h1{
     font-size:25px;
     color:navy;
