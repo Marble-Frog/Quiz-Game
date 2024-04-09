@@ -112,7 +112,11 @@ body{
     margin-right: auto;
     padding: 10px;
 }
-
+#question {
+    width: 100%;
+    padding: 10px;
+    font-size: 200%;
+}
 @media only screen and (max-width: 650px) {
 #finished{  
   width:90%;
