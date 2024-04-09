@@ -97,6 +97,21 @@ body {
   padding: 10px;
   font-size: 150%;
 }
+#correctAnswers{
+  font-size: 25px;
+  color: navy;
+  font-weight: 600;
+}
+#attempts{
+    font-size: 25px;
+    color: navy;
+    font-weight: 600;
+}
+#timer{
+    font-size: 25px;
+    color: navy;
+    font-weight: 600;
+  }
 
 /*All the styles for the End game stuff*/
 
