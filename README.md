@@ -1,11 +1,8 @@
 <h1>Quiz Game</h1>
 The Quiz game is a simple general knowledge quiz that tracks your Score, attempts and time.
-<div align="center">
-    <img src="assets/images(readme)/2024-01-27-19-40-55.png">
-</div>
 <h2>Features</h2>
 <hr>
-    <img src="assets/images(readme)/2024-01-27-20-31-52.png">
+    <img src="assets/images(readme)/rules.png">
     <ul>  
         <li>Rules</li>
         <ul>
