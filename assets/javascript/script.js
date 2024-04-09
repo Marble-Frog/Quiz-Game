@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let timerInterval;
   let elapsedTime = 0;
 
-  readyButton.addEventListener("click", function() {
+  readyButton.addEventListener("click", function () {
     document.querySelector(".app").style.display = "block";
     document.getElementById("intro").style.display = "none";
     startTimer();
@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let answersElement = document.getElementById("answers");
     answersElement.innerHTML = "";
 
-    currentQuestion.answers.forEach(answer => {
+    currentQuestion.answers.forEach((answer) => {
       let button = document.createElement("button");
       button.innerHTML = answer.text;
       button.classList.add("btn");
@@ -44,27 +44,30 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function handleNextQuestion() {
-    let selectedAnswer = currentSelectedAnswer;
-    let isCorrect = checkAnswer(selectedAnswer);
-    if (isCorrect) {
-      incrementScore();
-      if (gameScore === 10) {
-        clearInterval(timerInterval);
-        let finalTime = elapsedTime;
-        console.log("Final time:", formatTime(finalTime));
-        document.getElementById("finished").style.display = "block";
-        let x = document.getElementsByClassName("app");
-        for (let i = 0; i < x.length; i++) {
-          x[i].style.display = "none";
+    try {
+      let selectedAnswer = currentSelectedAnswer;
+      let isCorrect = checkAnswer(selectedAnswer);
+      if (isCorrect) {
+        incrementScore();
+        if (gameScore === 10) {
+          clearInterval(timerInterval);
+          let finalTime = elapsedTime;
+          console.log("Final time:", formatTime(finalTime));
+          document.getElementById("finished").style.display = "block";
+          let x = document.getElementsByClassName("app");
+          for (let i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+          }
+          return;
         }
-        return;
+      } else {
+        incrementAttempts();
       }
-    } else {
-      incrementAttempts();
+      showQuestion();
+    } catch (eer) {
+      console.error("An error occured in HandleNextQuestion", err);
     }
-    showQuestion();
   }
-
   function selectedAnswer(answer, selectedButton) {
     if (previousSelectedButton) {
       previousSelectedButton.style.border = "";
@@ -76,7 +79,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function checkAnswer(selectedAnswer) {
     let currentQuestion = questions[currentQuestionIndex];
-    let correctAnswer = currentQuestion.answers.find(answer => answer.correct);
+    let correctAnswer = currentQuestion.answers.find(
+      (answer) => answer.correct
+    );
     return selectedAnswer === correctAnswer.correct;
   }
 
@@ -103,11 +108,11 @@ document.addEventListener("DOMContentLoaded", function () {
     let remainingSeconds = seconds % 60;
     return (
       (minutes < 10 ? "0" : "") +
-      minutes + 
+      minutes +
       ":" +
       (remainingSeconds < 10 ? "0" : "") +
       remainingSeconds
-    ); 
+    );
   }
   const questions = [
     {
