@@ -1,153 +1,141 @@
 /*global styles*/
 
 * {
-    margin: 0;
-    padding: 0;
-    font-family: "Roboto", sans-serif;
-    font-style: normal;
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
 }
-body{
-    background-color:navy;
+body {
+  background-color: navy;
 }
-
-
 
 /*All the code needed for the intro*/
-#intro{
-    width: 50%;
-    background-color: #fff;
-    padding: 30px;;
-    border-radius: 3px;
-    margin-left:auto;
-    margin-right: auto;
+#intro {
+  width: 50%;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 3px;
+  margin-left: auto;
+  margin-right: auto;
 }
-#ready{
-    background-color:greenyellow;
-    font-size: 200%;
-    display: block;
-
+#ready {
+  background-color: greenyellow;
+  font-size: 200%;
+  display: block;
 }
-#readyBtn-div{
-    display: flex;
-    justify-content: center;
+#readyBtn-div {
+  display: flex;
+  justify-content: center;
 }
 #readyBtn-div :hover {
-    border-color: aquamarine;
-    background-color:aqua;
-
+  border-color: aquamarine;
+  background-color: aqua;
 }
-
-
 
 /*All the styles for the quiz game*/
 
-.app{
-    background:aliceblue;
-    width:90%;
-    max-width: 600px;
-    margin:100px auto 0;
-    border-radius: 10px;
-    padding:30px;
-    display: none;
+.app {
+  background: aliceblue;
+  width: 90%;
+  max-width: 600px;
+  margin: 100px auto 0;
+  border-radius: 10px;
+  padding: 30px;
+  display: none;
 }
-.app h2{
-    float:left;
-    padding-right:10px;
+.app h2 {
+  float: left;
+  padding-right: 10px;
 }
-.app h1{
-    font-size:25px;
-    color:navy;
-    font-weight: 600;
-    border-bottom:1px solid #333;
-    padding-bottom: 30px;
+.app h1 {
+  font-size: 25px;
+  color: navy;
+  font-weight: 600;
+  border-bottom: 1px solid #333;
+  padding-bottom: 30px;
 }
-.quiz{
-    padding:20px 0;
+.quiz {
+  padding: 20px 0;
 }
-.quiz h2{
-    font-size: 18px;
-    color: navy;
-    font-weight: 600;
+.quiz h2 {
+  font-size: 18px;
+  color: navy;
+  font-weight: 600;
 }
-.btn{
-    background:#fff;
-    color:navy;
-    font-weight: 500;
-    width: 100%;
-    border: 1px solid #222;
-    padding:10px;
-    margin:10px 0;
-    text-align: left;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: all 0.3s;
+.btn {
+  background: #fff;
+  color: navy;
+  font-weight: 500;
+  width: 100%;
+  border: 1px solid #222;
+  padding: 10px;
+  margin: 10px 0;
+  text-align: left;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s;
 }
-.btn:hover{
-    background: #222;
-    color:#fff;
-
+.btn:hover {
+  background: #222;
+  color: #fff;
 }
-#next-btn{
-    background:navy;
-    color: #fff;
-    font-weight: 500;
-    width: 150px;
-    border:0;
-    padding:10px;
-    margin:20px auto 0;
-    border-radius: 4px;
-    cursor:pointer;
-    display: none;
+#next-btn {
+  background: navy;
+  color: #fff;
+  font-weight: 500;
+  width: 150px;
+  border: 0;
+  padding: 10px;
+  margin: 20px auto 0;
+  border-radius: 4px;
+  cursor: pointer;
+  display: none;
 }
 #question {
-    width: 100%;
-    padding: 10px;
-    font-size: 150%;
+  width: 100%;
+  padding: 10px;
+  font-size: 150%;
 }
-
-
 
 /*All the styles for the End game stuff*/
 
-#finished{
-    text-align: center;
-    font-size: 120%;
-    background-color: antiquewhite;
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 3px;
-    position: absolute;
-    top:50%;
-    left:50%;
-    transform: translate(-50%, -50%);
-    display: none;
+#finished {
+  text-align: center;
+  font-size: 120%;
+  background-color: antiquewhite;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 3px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
 }
-#finished header{
-    color: blueviolet;
+#finished header {
+  color: blueviolet;
 }
-#finished p{
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 10px;
+#finished p {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
 }
-
-
-
 
 /*media query*/
 
 @media only screen and (max-width: 650px) {
-#finished{  
-  width:90%;
-  display: none;
-}
-#finished p{
+  #finished {
+    width: 90%;
+    display: none;
+  }
+  #finished p {
     width: 80%;
     margin-left: auto;
     margin-right: auto;
     padding: 10px;
     font-size: 80%;
-}
+  }
 }
