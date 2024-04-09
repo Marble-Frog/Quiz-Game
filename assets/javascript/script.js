@@ -44,21 +44,22 @@ ready2play();
     });
   };
   function showNextQuestion() {
-    console.log("Showing next question");
-    nextButton.addEventListener("click", function () {
-      console.log("Next button clicked");
-      let selectedAnswer = currentSelectedAnswer;
-      console.log("Selected answer:", selectedAnswer);
-      let isCorrect = checkAnswer(selectedAnswer);
-      console.log("Is answer correct?", isCorrect);
-      if (isCorrect) {
-        incrementScore();
-      } else {
-        incrementAttempts();
-      }
-      showQuestion();
-    });
+    nextButton.addEventListener("click", handleNextQuestion);
   };
+
+  function handleNextQuestion() {
+    let selectedAnswer = currentSelectedAnswer;
+    let isCorrect = checkAnswer(selectedAnswer);
+    if (isCorrect) {
+      incrementScore();
+      if (gameScore === questions.lenght) {
+        
+      }
+    } else {
+      incrementAttempts();
+    }
+    showQuestion();
+  }
   function selectedAnswer(answer, event) {
     let selectedButton = event.target;
 
