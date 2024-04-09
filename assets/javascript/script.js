@@ -127,7 +127,7 @@ document.addEventListener("DOMContentLoaded", function () {
       ],
     },
     {
-      question: "What is the capital of England",
+      question: "What is the capital of England?",
       answers: [
         { text: "Manchester", correct: false },
         { text: "Liverpool", correct: false },
@@ -136,7 +136,7 @@ document.addEventListener("DOMContentLoaded", function () {
       ],
     },
     {
-      question: "What is Batman's real name",
+      question: "What is Batman's real name?",
       answers: [
         { text: "Wayne Bruce", correct: false },
         { text: "Wruce Bayne", correct: false },
@@ -145,7 +145,7 @@ document.addEventListener("DOMContentLoaded", function () {
       ],
     },
     {
-      question: "How many continents are there and what are they called",
+      question: "How many continents are there and what are they called?",
       answers: [
         { text: "7", correct: true },
         { text: "8", correct: false },
@@ -154,7 +154,7 @@ document.addEventListener("DOMContentLoaded", function () {
       ],
     },
     {
-      question: "What's the name of the giant lizard that attacked Japan",
+      question: "What's the name of the giant lizard that attacked Japan?",
       answers: [
         { text: "Godzilla", correct: true },
         { text: "King Kong", correct: false },
@@ -199,7 +199,7 @@ document.addEventListener("DOMContentLoaded", function () {
       ],
     },
     {
-      question: "What is the fastest animal in the world",
+      question: "What is the fastest animal in the world?",
       answers: [
         { text: "cheetah", correct: false },
         { text: "Sailfish", correct: false },
