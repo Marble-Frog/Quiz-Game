@@ -2,7 +2,6 @@
 The Quiz game is a simple general knowledge quiz that tracks your Score, attempts and time.
 <h2>Features</h2>
 <hr>
-    <img src="assets/images(readme)/rules.png">
     <ul>  
         <li>Rules</li>
         <ul>
@@ -10,7 +9,7 @@ The Quiz game is a simple general knowledge quiz that tracks your Score, attempt
                 <li>After ready button is clicked rules will dissapear to give a better user experience</li>
         </ul>
     </ul>
-    <img src="assets/images(readme)/nav.png">
+    <img src="assets/images(readme)/rules.png">
     <ul>        
     <li>Ready Button</li>
         <ul>
@@ -18,7 +17,7 @@ The Quiz game is a simple general knowledge quiz that tracks your Score, attempt
             <li>Hides the rules when clicked</li>
         </ul>
     </ul>
-    <img src="assets/images(readme)/about us.png">
+    <hr>
     <ul>
         <li>Next Button</li>
         <ul>
@@ -26,7 +25,7 @@ The Quiz game is a simple general knowledge quiz that tracks your Score, attempt
             <li>Depending on the answer the score or attempts will be increased accordingly</li> 
         </ul>
     </ul> 
-    <img src="assets/images(readme)/methods.png">
+    <img src="assets/images(readme)/score.png">
     <ul>
         <li>Scores</li>
         <ul>
@@ -35,21 +34,22 @@ The Quiz game is a simple general knowledge quiz that tracks your Score, attempt
             <li>The next question will only show whenthe question is answered correct</li> 
         </ul>
     </ul>
-    <img src="assets/images(readme)/sign up.png">
     <ul>
         <li>Timer</li>
         <ul>
             <li>Timer starts as soon as the ready button is clicked</li>
             <li>The time it takes the user to  complete the quiz is tracked and logged to the console when finished</li>
         </ul>
-    </ul> 
-    <img src="assets/images(readme)/footer.png">
+    </ul>
+    <hr>
+    <img src="assets/images(readme)/endGame message.png">
     <ul>
         <li>End game message</li>
         <ul>
             <li>Congratulations message only shows when all answers are answered correctly</li>
         </ul>
-    </ul>     
+    </ul>
+    <hr>
 <h2>Testing</h2>
 <hr>
 <ul>
