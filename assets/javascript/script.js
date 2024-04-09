@@ -48,13 +48,16 @@ document.addEventListener("DOMContentLoaded", function () {
     let isCorrect = checkAnswer(selectedAnswer);
     if (isCorrect) {
       incrementScore();
-      if (gameScore === questions.length) {
-        document.getElementById("finished").style.display = "block"
+      if (gameScore === 10) {
+        clearInterval(timerInterval);
+        let finalTime = elapsedTime;
+        console.log("Final time:", formatTime(finalTime));
+        document.getElementById("finished").style.display = "block";
         let x = document.getElementsByClassName("app");
-        let i;
-        for ( i = 0; i < x.length; i++) {
+        for (let i = 0; i < x.length; i++) {
           x[i].style.display = "none";
-        };
+        }
+        return;
       }
     } else {
       incrementAttempts();
