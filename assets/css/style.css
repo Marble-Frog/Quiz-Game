@@ -4,6 +4,10 @@
     font-family: "Roboto", sans-serif;
     font-style: normal;
 }
+
+body{
+    background-color:navy;
+}
 #intro{
     width: 50%;
     background-color: #fff;
@@ -12,8 +16,20 @@
     margin-left:auto;
     margin-right: auto;
 }
-body{
-    background-color:navy;
+#readyBtn-div{
+    display: flex;
+    justify-content: center;
+}
+#readyBtn-div :hover {
+    border-color: aquamarine;
+    background-color:aqua;
+
+}
+#ready{
+    background-color:greenyellow;
+    font-size: 200%;
+    display: block;
+
 }
 .app{
     background:aliceblue;
@@ -72,4 +88,41 @@ body{
     border-radius: 4px;
     cursor:pointer;
     display: none;
+}
+#finished{
+    text-align: center;
+    font-size: 120%;
+    background-color: antiquewhite;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 3px;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+#finished header{
+    color: blueviolet;
+}
+#finished p{
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+}
+
+@media only screen and (max-width: 650px) {
+#finished{  
+  width:90%;
+  display: none;
+}
+#finished p{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    font-size: 80%;
+}
 }
