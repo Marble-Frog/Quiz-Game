@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
-  let readyButton = document.getElementById("ready")
-  const nextButton = document.getElementById("next-btn");
-  const questionElement = document.getElementById("question");
+  let nextButton = document.getElementById("next-btn");
+  let questionElement = document.getElementById("question");
+  let readyButton = document.getElementById("ready");
   let currentQuestionIndex = 0;
   let gameScore = 0;
   let attemptsScore = 0;
@@ -9,95 +9,88 @@ document.addEventListener("DOMContentLoaded", function () {
   let timerInterval;
   let elapsedTime = 0;
 
-  function ready2play() {
-    readyButton.addEventListener("click", function() {
-        document.querySelector(".app").style.display="block";
-        document.getElementById("intro").style.display="none"
-        startTimer()
-    });
-};
+  readyButton.addEventListener("click", function() {
+    document.querySelector(".app").style.display = "block";
+    document.getElementById("intro").style.display = "none";
+    startTimer();
+  });
 
-ready2play();
+  nextButton.addEventListener("click", handleNextQuestion);
 
   function runGame() {
     currentQuestionIndex = 0;
     nextButton.innerHTML = "Next";
     showQuestion();
-    showNextQuestion();
-  };
+  }
+
   function showQuestion() {
     let currentQuestion = questions[currentQuestionIndex];
     let questionNo = currentQuestionIndex + 1;
     questionElement.innerHTML = questionNo + ". " + currentQuestion.question;
 
-    document.getElementById("answers").innerHTML = "";
+    let answersElement = document.getElementById("answers");
+    answersElement.innerHTML = "";
 
-    currentQuestion.answers.forEach((answer) => {
+    currentQuestion.answers.forEach(answer => {
       let button = document.createElement("button");
       button.innerHTML = answer.text;
       button.classList.add("btn");
-      document.getElementById("answers").appendChild(button);
+      answersElement.appendChild(button);
       button.addEventListener("click", function (event) {
-        selectedAnswer(answer.correct, event);
-        document.getElementById("next-btn").style.display = "block";
+        selectedAnswer(answer.correct, event.target);
+        nextButton.style.display = "block";
       });
     });
-  };
-  function showNextQuestion() {
-    nextButton.addEventListener("click", handleNextQuestion);
-  };
+  }
 
   function handleNextQuestion() {
     let selectedAnswer = currentSelectedAnswer;
     let isCorrect = checkAnswer(selectedAnswer);
     if (isCorrect) {
       incrementScore();
-      if (gameScore === questions.lenght) {
-        
+      if (gameScore === questions.length) {
+        document.getElementById("finished").style.display = "block";
+        document.querySelector(".app").style.display = "none";
       }
     } else {
       incrementAttempts();
     }
     showQuestion();
   }
-  function selectedAnswer(answer, event) {
-    let selectedButton = event.target;
 
+  function selectedAnswer(answer, selectedButton) {
     if (previousSelectedButton) {
       previousSelectedButton.style.border = "";
     }
     selectedButton.style.border = "solid 3px orange";
     previousSelectedButton = selectedButton;
     currentSelectedAnswer = answer;
-  };
+  }
 
   function checkAnswer(selectedAnswer) {
     let currentQuestion = questions[currentQuestionIndex];
-    let correctAnswer = currentQuestion.answers.find(
-      (answer) => answer.correct
-    );
+    let correctAnswer = currentQuestion.answers.find(answer => answer.correct);
     return selectedAnswer === correctAnswer.correct;
-  };
+  }
+
   function incrementScore() {
     gameScore++;
     document.getElementById("correctAnswers").innerText = gameScore;
-    currentQuestionIndex += 1;
-  };
+    currentQuestionIndex++;
+  }
+
   function incrementAttempts() {
     attemptsScore++;
     document.getElementById("attempts").innerText = attemptsScore;
-  };
+  }
 
   function startTimer() {
     timerInterval = setInterval(function () {
       elapsedTime++;
       document.getElementById("timer").innerText = formatTime(elapsedTime);
     }, 1000);
-  };
-  
-  function pauseTimer() {
-    clearInterval(timerInterval);
-  };
+  }
+
   function formatTime(seconds) {
     let minutes = Math.floor(seconds / 60);
     let remainingSeconds = seconds % 60;
