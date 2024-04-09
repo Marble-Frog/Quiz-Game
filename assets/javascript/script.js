@@ -49,8 +49,12 @@ document.addEventListener("DOMContentLoaded", function () {
     if (isCorrect) {
       incrementScore();
       if (gameScore === questions.length) {
-        document.getElementById("finished").style.display = "block";
-        document.querySelector(".app").style.display = "none";
+        document.getElementById("finished").style.display = "block"
+        let x = document.getElementsByClassName("app");
+        let i;
+        for ( i = 0; i < x.length; i++) {
+          x[i].style.display = "none";
+        };
       }
     } else {
       incrementAttempts();
