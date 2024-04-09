@@ -1,4 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
+  
+  
+  /**Decladed variables */
   let nextButton = document.getElementById("next-btn");
   let questionElement = document.getElementById("question");
   let readyButton = document.getElementById("ready");
@@ -11,6 +14,10 @@ document.addEventListener("DOMContentLoaded", function () {
   let currentSelectedAnswer;
   let err;
 
+  
+  /**Event listener to start the quiz when ready button is clicked
+   * also starts the timer
+   */
   readyButton.addEventListener("click", function () {
     document.querySelector(".app").style.display = "block";
     document.getElementById("intro").style.display = "none";
@@ -43,8 +50,13 @@ document.addEventListener("DOMContentLoaded", function () {
         nextButton.style.display = "block";
       });
     });
-  }
+  };
 
+
+  
+  /**Code that adds to the corrrisponding answer selected
+   * also finishes the quiz and show time in the console
+   */
   function handleNextQuestion() {
     try {
       let selectedAnswer = currentSelectedAnswer;
@@ -70,6 +82,21 @@ document.addEventListener("DOMContentLoaded", function () {
       console.error("An error occured in HandleNextQuestion", err);
     }
   }
+  
+  
+  
+  /**Code for checking if selected answer is correct or not*/
+  function checkAnswer(selectedAnswer) {
+    let currentQuestion = questions[currentQuestionIndex];
+    let correctAnswer = currentQuestion.answers.find(
+      (answer) => answer.correct
+    );
+    return selectedAnswer === correctAnswer.correct;
+  }
+
+
+  
+  /**Code for Highlighting current selected answer*/
   function selectedAnswer(answer, selectedButton) {
     if (previousSelectedButton) {
       previousSelectedButton.style.border = "";
@@ -79,14 +106,9 @@ document.addEventListener("DOMContentLoaded", function () {
     currentSelectedAnswer = answer;
   }
 
-  function checkAnswer(selectedAnswer) {
-    let currentQuestion = questions[currentQuestionIndex];
-    let correctAnswer = currentQuestion.answers.find(
-      (answer) => answer.correct
-    );
-    return selectedAnswer === correctAnswer.correct;
-  }
-
+  
+  
+  /**Code relating to scores*/
   function incrementScore() {
     gameScore++;
     document.getElementById("correctAnswers").innerText = gameScore;
@@ -98,6 +120,9 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("attempts").innerText = attemptsScore;
   }
 
+
+
+  /**Code relating to the timer*/
   function startTimer() {
     timerInterval = setInterval(function () {
       elapsedTime++;
@@ -116,6 +141,10 @@ document.addEventListener("DOMContentLoaded", function () {
       remainingSeconds
     );
   }
+  
+  
+  
+  /**Questions */
   const questions = [
     {
       question: "What is the largest land animal in the world?",
