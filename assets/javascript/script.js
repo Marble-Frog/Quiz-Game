@@ -8,6 +8,8 @@ document.addEventListener("DOMContentLoaded", function () {
   let previousSelectedButton = null;
   let timerInterval;
   let elapsedTime = 0;
+  let currentSelectedAnswer;
+  let err;
 
   readyButton.addEventListener("click", function () {
     document.querySelector(".app").style.display = "block";
