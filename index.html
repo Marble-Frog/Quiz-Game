@@ -1,75 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quiz App</title>
-    <link rel="stylesheet" href = "assets/css/style.css" >
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Lato&family=Roboto:wght@100;300;400;500;700;900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
-</head>
-<body>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Lato&family=Roboto:wght@100;300;400;500;700;900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <div id="intro">
-           <h1> Welcome to simple quiz </h1> 
-            the rules are quite simple
-            <ul>
-                <li>you will be asked 10 questions</li> 
-                <li>answering them correct will increase your score and move you on to the next question</li>
-                <li>answering wrong will increase your attempts and you wont move to the next question</li>
-            </ul>     
-        <div id="readyBtn-div">
-            <button id="ready" >
-                Ready!
-            </button>
-        </div>
+      <h1>Welcome to simple quiz</h1>
+      the rules are quite simple
+      <ul>
+        <li>you will be asked 10 questions</li>
+        <li>
+          answering them correct will increase your score and move you on to the
+          next question
+        </li>
+        <li>
+          answering wrong will increase your attempts and you wont move to the
+          next question
+        </li>
+      </ul>
+      <div id="readyBtn-div">
+        <button id="ready">Ready!</button>
+      </div>
     </div>
     <div class="app">
-        <h1>
-            Simple Quiz
-        </h1>
-        <h2>Score:</h2>
-                <div id="correctAnswers">
-                    0
-                </div> 
-        
-        <h2>Attempts:</h2>
-            <div id="attempts">
-                0
-            </div>
-        
-        <!--Code used for timer is/roughly based off "https://www.youtube.com/watch?v=4piMZDO5IOI"-->
-        <div id="js_timer">
-            <h2>Time:</h2>
-                <div id="timer">
-                    00:00
-                </div>
-            
+      <h1>Simple Quiz</h1>
+      <h2>Score:</h2>
+      <div id="correctAnswers">0</div>
+
+      <h2>Attempts:</h2>
+      <div id="attempts">0</div>
+
+      <!--Code used for timer is/roughly based off "https://www.youtube.com/watch?v=4piMZDO5IOI"-->
+      <div id="js_timer">
+        <h2>Time:</h2>
+        <div id="timer">00:00</div>
+      </div>
+      <div class="quiz">
+        <h2 id="question">Question goes here</h2>
+        <div id="answers">
+          <button class="btn">Answer 1</button>
+          <button class="btn">Answer 2</button>
+          <button class="btn">Answer 3</button>
+          <button class="btn">Answer 4</button>
         </div>
-        <div class="quiz">
-            <h2 id="question">Question goes here</h2>
-            <div id="answers">
-                <button class = "btn">Answer 1</button>
-                <button class = "btn">Answer 2</button>
-                <button class = "btn">Answer 3</button>
-                <button class = "btn">Answer 4</button>
-            </div>
-            <button id="next-btn">Next</button>
-        </div>
+        <button id="next-btn">Next</button>
+      </div>
     </div>
     <div id="finished">
+      <article>
         <header>
-            <h1>Congratulations</h1>
+          <h1>Congratulations</h1>
         </header>
-        <article>
-            <p>
-                You have finished my super impossible quiz.
-                A worthy adversary indeed, hope the first
-                question didnt catch you out. Its kill
-                count is 3 so far ahaha.
-            </p>
-        </article>
+
+        <p>
+          You have finished my super impossible quiz. A worthy adversary indeed,
+          hope the first question didnt catch you out. Its kill count is 3 so
+          far ahaha.
+        </p>
+      </article>
     </div>
-    <script src = "assets/javascript/script.js"></script>
-</body>
+    <script src="assets/javascript/script.js"></script>
+  </body>
 </html>
