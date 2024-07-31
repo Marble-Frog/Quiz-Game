@@ -3,12 +3,14 @@ The Quiz game is a simple general knowledge quiz that tracks your Score, attempt
 <h2>Features</h2>
 <hr>
     <ul>  
-        <li>Rules</li>
+        <li>Intro</li>
         <ul>
                 <li>Shows as soon as the page is loaded</li>
-                <li>After ready button is clicked rules will dissapear to give a better user experience</li>
+                
+                <li>Explains the simple rules of the Quiz</li>
         </ul>
     </ul>
+    <p> I created the intro to give players time to understand the rules and to give them the option of chosing when they start, I've experienced too many games that start before the player is actually ready</p>
     <img src="assets/images(readme)/rules.png">
     <ul>        
     <li>Ready Button</li>
