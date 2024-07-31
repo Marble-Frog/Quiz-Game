@@ -9,15 +9,17 @@ The Quiz game is a simple general knowledge quiz that tracks your Score, attempt
                 <li>Explains the simple rules of the Quiz</li>
         </ul>
     </ul>
-    <p> I created the intro to give players time to understand the rules and to give them the option of chosing when they start, I've experienced too many games that start before the player is actually ready </p>
+    <p> I created the intro to give players time to understand the rules and to give them the option of chosing when they start, I've experienced too many games that start before the player is actually ready but now I'm in control I've added such feature :)</p>
     <img src="assets/images(readme)/rules.png">
     <ul>        
     <li>Ready Button</li>
         <ul>
-            <li>Starts the Quiz and the timer</li>
+            <li>Starts the Quiz</li>
+            <li>Starts the timer in the quiz pop up</li>
             <li>Hides the rules when clicked</li>
         </ul>
     </ul>
+    <p>To ensure that the quiz only starts when the player is fully ready, the ready button both hides the intro pop up and starts the timer on the quiz</p>
     <hr>
     <ul>
         <li>Next Button</li>
