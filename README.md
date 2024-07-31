@@ -19,7 +19,7 @@ The Quiz game is a simple general knowledge quiz that tracks your Score, attempt
             <li>Hides the rules when clicked</li>
         </ul>
     </ul>
-    <p>To ensure that the quiz only starts when the player is fully ready, the ready button both hides the intro pop up and starts the timer on the quiz</p>
+    <p>To ensure that the quiz only starts when the player is fully ready, the only way to navigate to the quiz is by pressing the ready button. Which will also start the timer for the quiz and hide the intro pop up</p>
     <hr>
     <ul>
         <li>Next Button</li>
