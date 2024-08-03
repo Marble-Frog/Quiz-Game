@@ -78,6 +78,7 @@ document.addEventListener("DOMContentLoaded", function () {
         incrementAttempts();
       }
       showQuestion();
+      currentSelectedAnswer = null;
     } catch (eer) {
       console.error("An error occured in HandleNextQuestion", err);
     }
