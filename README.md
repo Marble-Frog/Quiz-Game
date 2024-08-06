@@ -35,14 +35,14 @@ The Quiz game is a simple general knowledge quiz that tracks your Score, attempt
         <ul>
             <li>The total amount of correct answers the user has submitted is track and shown</li>
             <li>The total am§ount of incorrect answers the user has tried to commit is tracked and shown</li>
-            <li>The next question will only show whenthe question is answered correct</li> 
+            <li>The next question will only show when the question is answered correct</li> 
         </ul>
     </ul>
     <ul>
         <li>Timer</li>
         <ul>
             <li>Timer starts as soon as the ready button is clicked</li>
-            <li>The time it takes the user to  complete the quiz is tracked and logged to the console when finished</li>
+            <li>The time it takes the user to complete the quiz is tracked and logged to the console when finished</li>
         </ul>
     </ul>
     <hr>
@@ -51,6 +51,8 @@ The Quiz game is a simple general knowledge quiz that tracks your Score, attempt
         <li>End game message</li>
         <ul>
             <li>Congratulations message only shows when all answers are answered correctly</li>
+            <li>Now has a quiz restart button, takes you to the intro so if multiple people are playing one after another everyone gets a chance to read the rules at their own pace.
+            Furthermore they can start the quiz whenever they are ready.</li>
         </ul>
     </ul>
     <hr>
@@ -67,6 +69,8 @@ The Quiz game is a simple general knowledge quiz that tracks your Score, attempt
    <ul>
        <li>Right and wrong answer increasing attemots score, problem when calling implementScore function</li>
        <li>Next button not taking you to the next question, it was a problem with the currentQuestionIndex</li>
+       <li>Submitting a null answer increases score and moves to next question</li>
+       <li>submitting a null answer increases attempts by 2</li>
     </ul>
 
 <h3>Validator Testing</h3>
