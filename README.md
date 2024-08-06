@@ -24,8 +24,9 @@ The Quiz game is a simple general knowledge quiz that tracks your Score, attempt
     <ul>
         <li>Next Button</li>
         <ul>
-            <li>CHeck to see if the answer the user submitted is correct or not</li>
-            <li>Depending on the answer the score or attempts will be increased accordingly</li> 
+            <li>Check to see if the answer the user submitted is correct or not</li>
+            <li>If the correct answer is submitted you will move onto the next question and increase your score by 1</li> 
+            <li>If an incorrect or no answer is selected you'll remain on the same question and increase your attempts by 1</li>
         </ul>
     </ul> 
     <img src="assets/images(readme)/score.png">
@@ -33,7 +34,7 @@ The Quiz game is a simple general knowledge quiz that tracks your Score, attempt
         <li>Scores</li>
         <ul>
             <li>The total amount of correct answers the user has submitted is track and shown</li>
-            <li>The total ammount of incorrect answers the user has tried to commit is tracked and show</li>
+            <li>The total am§ount of incorrect answers the user has tried to commit is tracked and shown</li>
             <li>The next question will only show whenthe question is answered correct</li> 
         </ul>
     </ul>
