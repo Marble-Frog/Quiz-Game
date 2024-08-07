@@ -68,6 +68,12 @@ document.addEventListener("DOMContentLoaded", function () {
           let finalTime = elapsedTime;
           console.log("Final time:", formatTime(finalTime));
           document.getElementById("finished").style.display = "block";
+          
+          var img = document.createElement("img");
+          img.src = "assets/images(Quiz)/fireworks.gif"
+          var src = document.getElementById("finished");
+          src.appendChild(img);
+          
           let x = document.getElementsByClassName("app");
           for (let i = 0; i < x.length; i++) {
             x[i].style.display = "none";
